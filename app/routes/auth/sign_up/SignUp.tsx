@@ -1,5 +1,5 @@
 import React, { type ReactElement } from "react";
-import type { Route } from "./+types/sign_in";
+import type { Route } from "./+types/sign_up";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -10,7 +10,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function SignIn(): React.ReactElement {
   return (
-    <div className="mx-auto w-2/3 pt-12 space-y-5">
+    <div className="mx-auto w-3/4 pt-12 space-y-5">
       <div className="font-normal text-[#484848] text-[66.6px] tracking-[0] leading-[66.6px] whitespace-nowrap">
         FASCO
       </div>
@@ -25,7 +25,7 @@ export default function SignIn(): React.ReactElement {
             <img
               className="w-9 h-9 top-[9px] left-[30px]  object-cover"
               alt="Image"
-              src="./auth/icon_google.png"
+              src="../auth/icon_google.png"
             />
             <div className="left-[79px]  top-[7px] [font-family:'Poppins-Regular',Helvetica] font-normal text-black text-base tracking-[1.28px] leading-10 whitespace-nowrap">
               Sign up with Google
@@ -36,7 +36,7 @@ export default function SignIn(): React.ReactElement {
             <img
               className="w-[42px] h-[42px] top-1.5 left-5  object-cover"
               alt="Image"
-              src="./auth/icon_mail.png"
+              src="../auth/icon_mail.png"
             />
             <div className="left-[75px]  top-[7px] [font-family:'Poppins-Regular',Helvetica] font-normal text-black text-base tracking-[1.28px] leading-10 whitespace-nowrap">
               Sign up with Email
@@ -49,42 +49,61 @@ export default function SignIn(): React.ReactElement {
           OR
         </div>
       </div>
-      <div className="flex flex-col items-end gap-2">
+      <div className="flex flex-col items-center gap-2">
         <form
           action=""
           method="post"
-          className="w-full flex flex-col gap-3 items-center"
+          className="w-full flex flex-col gap-5 items-center"
         >
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-            className="border-b w-full py-2 outline-none"
-          />
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Password"
-            className="border-b w-full py-2 outline-none"
-          />
+          <div className="flex gap-4 w-full ">
+            <input
+              type="text"
+              placeholder="First Name"
+              className="border-b border-gray-300 outline-none w-full"
+            />
+            <input
+              type="text"
+              placeholder="Last Name"
+              className="border-b border-gray-300 outline-none w-full"
+            />
+          </div>
+          <div className="flex gap-2 w-full ">
+            <input
+              type="text"
+              placeholder="Email Address"
+              className="border-b border-gray-300 outline-none w-full"
+            />
+            <input
+              type="number"
+              placeholder="Phone Number"
+              className="border-b border-gray-300 outline-none w-full"
+            />
+          </div>
+          <div className="flex gap-2 w-full ">
+            <input
+              type="text"
+              placeholder="Password"
+              className="border-b border-gray-300 outline-none w-full"
+            />
+            <input
+              type="text"
+              placeholder="Confirm Password"
+              className="border-b border-gray-300 outline-none w-full"
+            />
+          </div>
           <button
             type="submit"
             className="w-4/5 border border-black block py-1 rounded-md mt-2 bg-black font-semibold text-white"
           >
-            Sign In
+            Create Account
           </button>
-          <a
-            href="/auth/sign-up"
-            className="w-4/5 border border-black block py-1 rounded-md text-center text-[#5B86E5]"
-          >
-            Register Now
-          </a>
         </form>
-        <a href="#" className="font-bold text-[#5B86E5]">
-          Forget Password?
-        </a>
+        <p>
+          Already have an account?{" "}
+          <a href="/auth" className="text-[#5B86E5]">
+            Login
+          </a>
+        </p>
       </div>
     </div>
   );

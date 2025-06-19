@@ -13,5 +13,6 @@ export default [
   // ]),
   route("/auth", "routes/auth/layout.tsx", [
     index("routes/auth/sign_in/SignIn.tsx"),
+    route("sign-up", "routes/auth/sign_up/SignUp.tsx"),
   ]),
 ] satisfies RouteConfig;
